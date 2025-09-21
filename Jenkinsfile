@@ -3,12 +3,15 @@ node {
         checkout scm
     }
 
-    stage('Build & Test') {
-        // Gunakan Docker Node.js
-        docker.image('node:lts').inside {
-            sh 'npm install'
-            sh 'npm run build'
-            sh 'npm test -- --watchAll=false'
-        }
+    stage('Install') {
+        sh 'npm install'
+    }
+
+    stage('Build') {
+        sh 'npm run build'
+    }
+
+    stage('Test') {
+        sh 'npm test -- --watchAll=false'
     }
 }

@@ -3,15 +3,9 @@ node {
         checkout scm
     }
 
-    stage('Install') {
+    stage('Build & Test') {
         sh 'npm install'
-    }
-
-    stage('Build') {
         sh 'npm run build'
-    }
-
-    stage('Test') {
         sh 'npm test -- --watchAll=false'
     }
 }

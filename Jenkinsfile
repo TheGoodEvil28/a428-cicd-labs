@@ -8,7 +8,11 @@ node {
     }
 
     stage('Build') {
-        sh 'npm run build'
+        docker.image('node:lts').inside {
+            sh 'npm install'
+            sh 'npm run build'
+            sh 'npm test -- --watchAll=false'
+        }
     }
 
     stage('Test') {

@@ -1,0 +1,216 @@
+Started by an SCM change
+Obtained jenkins/Jenkinsfile from git https://github.com/TheGoodEvil28/a428-cicd-labs.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/submission-cicd-pipeline-andikadsn@2
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/TheGoodEvil28/a428-cicd-labs.git
+ > git init /var/jenkins_home/workspace/submission-cicd-pipeline-andikadsn@2 # timeout=10
+Fetching upstream changes from https://github.com/TheGoodEvil28/a428-cicd-labs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.5'
+ > git fetch --tags --force --progress -- https://github.com/TheGoodEvil28/a428-cicd-labs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/TheGoodEvil28/a428-cicd-labs.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/react-app^{commit} # timeout=10
+Checking out Revision 64c57536a7787d58f48b1b6b7e4ed4f29c8f8390 (refs/remotes/origin/react-app)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 64c57536a7787d58f48b1b6b7e4ed4f29c8f8390 # timeout=10
+Commit message: "openssl"
+ > git rev-list --no-walk 17cfce891d2ece030f148b3fa4b1594b38b7d6f8 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
++ npm install
+npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated move-concurrently@1.0.1: This package is no longer supported.
+npm warn deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+npm warn deprecated source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+npm warn deprecated flatten@1.0.3: flatten is deprecated in favor of utility frameworks such as lodash.
+npm warn deprecated @babel/plugin-proposal-private-methods@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
+npm warn deprecated @babel/plugin-proposal-numeric-separator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+npm warn deprecated figgy-pudding@3.5.2: This module is no longer supported.
+npm warn deprecated @hapi/bourne@1.3.2: This version has been deprecated and is no longer supported or maintained
+npm warn deprecated @hapi/topo@3.1.6: This version has been deprecated and is no longer supported or maintained
+npm warn deprecated rollup-plugin-terser@5.3.1: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm warn deprecated @humanwhocodes/config-array@0.5.0: Use @eslint/config-array instead
+npm warn deprecated copy-concurrently@1.0.5: This package is no longer supported.
+npm warn deprecated lodash.template@4.5.0: This package is deprecated. Use https://socket.dev/npm/package/eta instead.
+npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+npm warn deprecated @babel/plugin-proposal-private-property-in-object@7.21.11: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
+npm warn deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+npm warn deprecated querystring@0.2.1: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+npm warn deprecated domexception@2.0.1: Use your platform's native DOMException instead
+npm warn deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+npm warn deprecated
+npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+npm warn deprecated fs-write-stream-atomic@1.0.10: This package is no longer supported.
+npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+npm warn deprecated sane@4.1.0: some dependency vulnerabilities fixed, support for node < 10 dropped, and newer ECMAScript syntax/features added
+npm warn deprecated babel-eslint@10.1.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+npm warn deprecated @hapi/address@2.1.4: Moved to 'npm install @sideway/address'
+npm warn deprecated @humanwhocodes/object-schema@1.2.1: Use @eslint/object-schema instead
+npm warn deprecated rollup-plugin-babel@4.4.0: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-babel.
+npm warn deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+npm warn deprecated @hapi/hoek@8.5.1: This version has been deprecated and is no longer supported or maintained
+npm warn deprecated workbox-google-analytics@5.1.4: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
+npm warn deprecated @hapi/joi@15.1.1: Switch to 'npm install joi'
+npm warn deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+npm warn deprecated eslint@7.32.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+npm warn deprecated core-js@2.6.12: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+
+added 1820 packages, and audited 1821 packages in 1m
+
+215 packages are looking for funding
+  run `npm fund` for details
+
+138 vulnerabilities (100 moderate, 31 high, 7 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] sh
++ ./jenkins/scripts/test.sh
+The following "npm" command (if executed) installs the "cross-env"
+dependency into the local "node_modules" directory, which will ultimately
+be stored in the Jenkins home directory. As described in
+https://docs.npmjs.com/cli/install, the "--save-dev" flag causes the
+"cross-env" dependency to be installed as "devDependencies". For the
+purposes of this tutorial, this flag is not important. However, when
+installing this dependency, it would typically be done so using this
+flag. For a comprehensive explanation about "devDependencies", see
+https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies.
++ set +x
+The following "npm" command tests that your simple Node.js/React
+application renders satisfactorily. This command actually invokes the test
+runner Jest (https://facebook.github.io/jest/).
++ npm test
+
+> my-app@0.1.0 test
+> react-scripts test --env=jsdom
+
+PASS src/App.test.js
+  ✓ renders without crashing (23 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        1.807 s
+Ran all test suites.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deliver)
+[Pipeline] sh
++ ./jenkins/scripts/deliver.sh
+The following "npm" command builds your Node.js/React application for
+production in the local "build" directory (i.e. within the
+"/var/jenkins_home/workspace/simple-node-js-react-app" directory),
+correctly bundles React in production mode and optimizes the build for
+the best performance.
++ npm run build
+
+> my-app@0.1.0 build
+> react-scripts build
+
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  41.35 KB  build/static/js/2.ee1dd18b.chunk.js
+  972 B     build/static/js/main.ed4e6a93.chunk.js
+  776 B     build/static/js/runtime-main.5a4a9e9a.js
+  278 B     build/static/css/main.31c7f1b8.chunk.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
++ set +x
+The following "npm" command runs your Node.js/React application in
+development mode and makes the application available for web browsing.
+The "npm start" command has a trailing ampersand so that the command runs
+as a background process (i.e. asynchronously). Otherwise, this command
+can pause running builds of CI/CD applications indefinitely. "npm start"
+is followed by another command that retrieves the process ID (PID) value
+of the previously run process (i.e. "npm start") and writes this value to
+the file ".pidfile".
++ sleep 1
++ npm start
+
+> my-app@0.1.0 start
+> react-scripts start
+
++ echo 4038
++ set +x
+Now...
+Visit http://localhost:3000 to see your Node.js/React application in action.
+(This is why you specified the "args -p 3000:3000" parameter when you
+created your initial Pipeline as a Jenkinsfile.)
+[Pipeline] input
+Finished using the website? (Click "Proceed" to continue)
+Proceed or Abort
+Approved by Dicoding Indonesia
+[Pipeline] sh
++ ./jenkins/scripts/kill.sh
+The following command terminates the "npm start" process using its PID
+(written to ".pidfile"), all of which were conducted when "deliver.sh"
+was executed.
++ cat .pidfile
++ kill 4038
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

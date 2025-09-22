@@ -1,10 +1,9 @@
 pipeline {
     agent any
     environment {
-    CI = 'true'
-    NODE_OPTIONS = '--openssl-legacy-provider'
-}
-
+        CI = 'true'
+        NODE_OPTIONS = '--openssl-legacy-provider'
+    }
     stages {
         stage('Build') {
             steps {
@@ -16,12 +15,24 @@ pipeline {
                 sh './jenkins/scripts/test.sh'
             }
         }
-        stage('Deliver') {
+        stage('Manual Approval') {
+            steps {
+                script {
+                    input message: 'Lanjutkan ke tahap Deploy?', ok: 'Proceed'
+                }
+            }
+        }
+        stage('Deploy') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
-                input message: 'Finished using the website? (Click "Proceed" to continue)'
+                sh 'sleep 60'
                 sh './jenkins/scripts/kill.sh'
             }
+        }
+    }
+    post {
+        success {
+            archiveArtifacts artifacts: 'build/**', fingerprint: true
         }
     }
 }

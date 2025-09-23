@@ -1,0 +1,71 @@
++ ./jenkins/scripts/deliver.sh
+The following "npm" command builds your Node.js/React application for
+production in the local "build" directory (i.e. within the
+"/var/jenkins_home/workspace/simple-node-js-react-app" directory),
+correctly bundles React in production mode and optimizes the build for
+the best performance.
++ npm run build
+
+> my-app@0.1.0 build
+> react-scripts build
+
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  41.35 KB  build/static/js/2.ee1dd18b.chunk.js
+  972 B     build/static/js/main.ed4e6a93.chunk.js
+  776 B     build/static/js/runtime-main.5a4a9e9a.js
+  278 B     build/static/css/main.31c7f1b8.chunk.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
++ set +x
+The following "npm" command runs your Node.js/React application in
+development mode and makes the application available for web browsing.
+The "npm start" command has a trailing ampersand so that the command runs
+as a background process (i.e. asynchronously). Otherwise, this command
+can pause running builds of CI/CD applications indefinitely. "npm start"
+is followed by another command that retrieves the process ID (PID) value
+of the previously run process (i.e. "npm start") and writes this value to
+the file ".pidfile".
++ sleep 1
++ npm start
+
+> my-app@0.1.0 start
+> react-scripts start
+
++ echo 538
++ set +x
+Now...
+Visit http://localhost:3000 to see your Node.js/React application in action.
+(This is why you specified the "args -p 3000:3000" parameter when you
+created your initial Pipeline as a Jenkinsfile.)
++ sleep 60
++ ./jenkins/scripts/kill.sh
+The following command terminates the "npm start" process using its PID
+(written to ".pidfile"), all of which were conducted when "deliver.sh" was executed.
++ [ -f .pidfile ]
++ cat .pidfile
++ PID=538
++ kill -0 538
++ kill 538
++ echo Process 538 terminated
+Process 538 terminated
++ rm -f .pidfile
++ set +x
+Archiving artifacts
+Recording fingerprints

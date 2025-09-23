@@ -3,7 +3,7 @@ global:
 
 scrape_configs:
   - job_name: 'jenkins'
-    metrics_path: '/prometheus'
+    metrics_path: 'prometheus'
     basic_auth:
       username: 'admin'
       password: '11057a69df21cfb937c73454bb00cdd036'
